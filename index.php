@@ -8,8 +8,12 @@
 </head>
 <body>
 <?php
-$heading = 8+4;
-echo "<h3>Привет мир</h3>"." ".$heading;
+$i = 1;
+while($i<=15){
+    echo "<h1 class=\"heading-item\">Hello world</h1>";
+    $i++;
+}
 ?>
+<script src="script.js"></script>
 </body>
 </html>
