@@ -106,11 +106,35 @@
 ?>
 
 <?php 
+//Сохранение cookie
 $name = "Tom";
 $age = 36;
 setcookie("name", $name);
 setcookie("age", $age, time()+3600); //Срок действия -1 час (3600 секунд)
 echo "Куки установлены";
+?>
+
+<?php
+//Получение cookie
+if (isset($_COOKIE["name"]))echo "Name: " .$_COOKIE["name"]."<br>";
+if (isset($_COOKIE["age"]))echo "Age: ".$_COOKIE["age"]."<br>";
+?>
+
+<?php
+//Сохранение массивов в cookie
+setcookie("lang[1]", "PHP");
+setcookie("lang[2]", "C#");
+setcookie("lang[3]", "Java");
+
+if(isset($_COOKIE["lang"])){
+    foreach ($_COOKIE["lang"] as $name=>$value){
+        $name = htmlspecialchars($name);
+        $value = htmlspecialchars($value);
+        echo "$name.$value <br />";
+    }
+}
+//Удаление cookie
+setcookie("lang[3]","", time()-3600);
 ?>
 <script src="script.js"></script>
 </body>
