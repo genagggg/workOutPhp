@@ -136,6 +136,24 @@ if(isset($_COOKIE["lang"])){
 //Удаление cookie
 setcookie("lang[3]","", time()-3600);
 ?>
+
+<?php
+//Создание файла
+$myFile = fopen("file.txt", "w");
+
+//Запись в фаил
+
+$txt = "John\n";
+fwrite($myFile, $txt);
+
+$txt = "Ben\n";
+fwrite($myFile, $txt);
+fclose($myFile);
+
+fopen($myFile,"a");
+fwrite($myFile, "Some text");
+
+?>
 <script src="script.js"></script>
 </body>
 </html>
