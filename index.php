@@ -8,10 +8,13 @@
 </head>
 <body>
   
-<form action="actionPost.php" method="post">
-    <input  type="text" name="text" />
-    <input type="submit" name="submit" value="Отправить"/>
-</form>
+<?php
+
+$read = file('text.txt');
+foreach($read as $line){
+    echo $line;
+}
+?>
 
 <script src="script.js"></script>
 </body>
